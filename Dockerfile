@@ -3,11 +3,10 @@ USER root
 RUN echo "deb http://archive.debian.org/debian jessie main" > /etc/apt/sources.list
 RUN apt-get update && apt-get install -y --force-yes nginx
 
-
 RUN useradd -s /bin/false nginx
 COPY nginx.conf /etc/nginx/nginx.conf
+RUN systemctl enable nginx 
 
-RUN service nginx start
 EXPOSE 80
 
 
