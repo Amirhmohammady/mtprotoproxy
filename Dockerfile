@@ -1,5 +1,5 @@
 FROM telegrammessenger/proxy:latest As AmirUbuntu
 USER root
+RUN apt-get update && apt-get install -y nginx
 EXPOSE 443
-RUN apt update
-RUN apt install nginx
+
