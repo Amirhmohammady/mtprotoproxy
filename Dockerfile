@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y --force-yes nginx
 RUN useradd -s /bin/false nginx
 COPY nginx.conf /etc/nginx/nginx.conf
 # Start Nginx directly
-CMD service nginx start
+CMD ["nginx", "-g", "daemon off;"]
 
 EXPOSE 80
 
