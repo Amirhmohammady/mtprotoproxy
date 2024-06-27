@@ -1,3 +1,5 @@
-#FROM fabric8/java-centos-openjdk8-jdk:latest As AmirUbuntu
 FROM telegrammessenger/proxy:latest As AmirUbuntu
+USER root
 EXPOSE 443
+RUN apt update
+RUN apt install nginx
